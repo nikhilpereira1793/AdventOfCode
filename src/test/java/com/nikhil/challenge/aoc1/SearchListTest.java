@@ -31,5 +31,6 @@ public class SearchListTest {
 		NumberPair sumElements = searchList.findNumberPairThatAddUpToTotal(total, numbers);
 		assertNotNull(sumElements);
 		assertEquals(total, sumElements.getTotal());
+		assertEquals(877971, sumElements.getProduct());
 	}
 }

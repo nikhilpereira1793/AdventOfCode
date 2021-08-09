@@ -28,6 +28,10 @@ public class NumberPair {
 	public int getTotal() {
 		return this.number1 + this.number2;
 	}
+	
+	public int getProduct() {
+		return this.number1 * this.number2;
+	}
 
 	@Override
 	public String toString() {

@@ -24,6 +24,6 @@ public class ExecuteChallenge {
     	int total = 2020;
     	SearchList searchList = new SearchList();
 		NumberPair sumElements = searchList.findNumberPairThatAddUpToTotal(total, numbers);
-		System.out.println(sumElements);
+		System.out.println(sumElements.getProduct());
     }
 }
