@@ -28,9 +28,11 @@ public class SearchListTest {
 	@Test
 	void testFindNumberPairThatAddUpToTotal() {
 		int total = 2020;
-		NumberPair sumElements = searchList.findNumberPairThatAddUpToTotal(total, numbers);
+		List<Integer> sumElements = searchList.findNumberPairThatAddUpToTotal(total, numbers);
 		assertNotNull(sumElements);
-		assertEquals(total, sumElements.getTotal());
-		assertEquals(877971, sumElements.getProduct());
+		int sumTotal = sumElements.stream().reduce((sum, number) -> sum + number).get();
+		assertEquals(total, sumTotal);
+		int productTotal = sumElements.stream().reduce((product, number) -> product * number).get();
+		assertEquals(877971, productTotal);
 	}
 }

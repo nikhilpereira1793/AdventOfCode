@@ -6,7 +6,6 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.nikhil.challenge.aoc1.NumberPair;
 import com.nikhil.challenge.aoc1.SearchList;
 
 public class ExecuteChallenge {
@@ -18,12 +17,16 @@ public class ExecuteChallenge {
     }
     
     public void execute() throws IOException {
+    	// challenge 1 1st half
     	List<Integer> numbers = new ArrayList<>();
     	Files.readAllLines(Paths.get(getClass().getClassLoader().getResource("challenge-1-input.txt").getPath()))
 		.forEach(line -> numbers.add(Integer.parseInt(line)));
     	int total = 2020;
     	SearchList searchList = new SearchList();
-		NumberPair sumElements = searchList.findNumberPairThatAddUpToTotal(total, numbers);
-		System.out.println(sumElements.getProduct());
+		List<Integer> sumElements = searchList.findNumberPairThatAddUpToTotal(total, numbers);
+		int result = sumElements.stream().reduce((product, number) -> product * number).get();
+		System.out.println(result);
+		// challenge 1 2nd half
+		
     }
 }
