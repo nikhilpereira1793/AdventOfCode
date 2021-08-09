@@ -23,7 +23,7 @@ public class ExecuteChallenge {
 		.forEach(line -> numbers.add(Integer.parseInt(line)));
     	int total = 2020;
     	SearchList searchList = new SearchList();
-		List<Integer> sumElements = searchList.findNumberPairThatAddUpToTotal(total, numbers);
+		List<Integer> sumElements = searchList.findSumElementsThatAddUpToTotal(total, numbers);
 		int result = sumElements.stream().reduce((product, number) -> product * number).get();
 		System.out.println(result);
 		// challenge 1 2nd half

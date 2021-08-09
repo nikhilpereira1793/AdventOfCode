@@ -6,7 +6,7 @@ import java.util.List;
 
 public class SearchList {
 
-	public List<Integer> findNumberPairThatAddUpToTotal(int total, List<Integer> numbers) {
+	public List<Integer> findSumElementsThatAddUpToTotal(int total, List<Integer> numbers) {
 		List<Integer> sumElements = new ArrayList<>();
 		if(!numbers.isEmpty()) {
 			Collections.sort(numbers);

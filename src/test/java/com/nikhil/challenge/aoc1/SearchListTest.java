@@ -26,9 +26,9 @@ public class SearchListTest {
 
 	@DisplayName("Given a list of numbers and a number, find the two numbers in the list that add up to the given number")
 	@Test
-	void testFindNumberPairThatAddUpToTotal() {
+	void testFindSumElementsThatAddUpToTotal() {
 		int total = 2020;
-		List<Integer> sumElements = searchList.findNumberPairThatAddUpToTotal(total, numbers);
+		List<Integer> sumElements = searchList.findSumElementsThatAddUpToTotal(total, numbers);
 		assertNotNull(sumElements);
 		int sumTotal = sumElements.stream().reduce((sum, number) -> sum + number).get();
 		assertEquals(total, sumTotal);
