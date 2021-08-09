@@ -1,7 +1,6 @@
 package com.nikhil.challenge.aoc1;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -11,8 +10,6 @@ public class SearchList {
 		List<Integer> sumElements = new ArrayList<>();
 		if(!numbers.isEmpty()) {
 			Collections.sort(numbers);
-			int smallestNumber = numbers.get(0);
-			int largestNumber = numbers.get(numbers.size() - 1);
 			for(int number: numbers) {
 				int difference = total - number;
 				List<Integer> differenceSumElements = findSumElementsThatAddUpToDifference(difference, numbers);
@@ -29,7 +26,6 @@ public class SearchList {
 	private List<Integer> findSumElementsThatAddUpToDifference(int total, List<Integer> numbers) {
 		List<Integer> sumElements = new ArrayList<>();
 		if(!numbers.isEmpty()) {
-			Collections.sort(numbers);
 			int smallestNumber = numbers.get(0);
 			int largestNumber = numbers.get(numbers.size() - 1);
 			for(int number: numbers) {
