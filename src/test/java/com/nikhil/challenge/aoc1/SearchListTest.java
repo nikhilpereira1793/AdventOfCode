@@ -14,7 +14,6 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 public class SearchListTest {
-	
 	SearchList searchList = new SearchList();
 	List<Integer> numbers = new ArrayList<>();
 	
@@ -27,12 +26,13 @@ public class SearchListTest {
 	@DisplayName("Given a list of numbers and a number, find the two numbers in the list that add up to the given number")
 	@Test
 	void testFindSumElementsThatAddUpToTotal() {
-		int total = 2020;
-		List<Integer> sumElements = searchList.findSumElementsThatAddUpToTotal(total, numbers);
+		int expectedTotal = 2020;
+		int expectedProductTotal = 203481432;
+		List<Integer> sumElements = searchList.findSumElementsThatAddUpToTotal(expectedTotal, numbers);
 		assertNotNull(sumElements);
 		int sumTotal = sumElements.stream().reduce((sum, number) -> sum + number).get();
-		assertEquals(total, sumTotal);
+		assertEquals(expectedTotal, sumTotal);
 		int productTotal = sumElements.stream().reduce((product, number) -> product * number).get();
-		assertEquals(877971, productTotal);
+		assertEquals(expectedProductTotal, productTotal);
 	}
 }
